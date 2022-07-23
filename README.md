@@ -1,4 +1,4 @@
-# time-on-fire
+# UNFIFNISHED time-on-fire
 A simple activity tracker written in Python for Windows 10.
 
 ### Why? There are time trackers already.
