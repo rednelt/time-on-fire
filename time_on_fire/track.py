@@ -29,7 +29,7 @@ def track(debug=False):
         except (psutil.NoSuchProcess, ValueError, ProcessLookupError):
             return None
 
-    # We'll count the activities to print them later. Feedback, you know.
+    # We'll count the activities to print them later. More feedback -> better UX
     activity_count = 0
 
     # Connect the database
@@ -63,12 +63,30 @@ def track(debug=False):
     if debug:
         print(process_name_1)
 
-    date = datetime.date.today().strftime("%Y-%m-%d")
+    date = datetime.date.today()
 
     start = datetime.datetime.now().strftime("%H:%M:%S")
 
     # Poll for the current process name and detect when it changes
     while True:
+
+        # If date changed, update it and split the activity (start -> 23:59:59 and 00:00:00 -> end)
+        new_date = datetime.date.today()
+        if date < new_date:
+
+            cursor.execute("INSERT INTO activities (date, process_name, start, end) VALUES (?, ?, ?, ?)",
+                           (date, process_name_1, start, "23:59:59"))
+
+            date = new_date
+
+            conn.commit()
+
+            if debug:
+                print(f"Date changed. Carrying over {process_name_1} activity.")
+                print(f"{process_name_1} {start} -> {process_name_1} 23:59:59")
+
+            start = "00:00:01"
+
         process_name_2 = get_active_window_process_name()
         while not process_name_2:
             process_name_2 = get_active_window_process_name()
@@ -102,12 +120,6 @@ def track(debug=False):
         time.sleep(POLLING_DELAY)
 
 
-# For debugging purposes, if track.py is ran as a script
+# If track.py is ran as a script
 if __name__ == "__main__":
     track(debug=True)
-    conn = sqlite3.connect("activities.db")
-    cursor = conn.cursor()
-    data = tabulate.tabulate(cursor.execute("SELECT * FROM activities WHERE date BETWEEN 3024-24-56 AND 2012-92-08"),
-                             tablefmt="fancy_grid")
-    print(data)
-    cursor.close()
