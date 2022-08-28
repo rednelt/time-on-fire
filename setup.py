@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='time-on-fire-test',
-    version='0.1.2',
+    name='time-on-fire',
+    version='0.1.0',
     author="zapChip",
     author_email="ag11012008@gmail.com",
     description="A simple activity tracker for Windows.",
@@ -14,7 +14,7 @@ setup(
     },
     include_package_data=True,
     install_requires=[
-        "click", "pywin32", "psutil", "tabulate"
+        "wheel", "click", "pywin32", "psutil", "tabulate"
     ],
     keywords=["python time-tracking time tracking monitoring report"],
     classifiers=[
