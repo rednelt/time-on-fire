@@ -1,4 +1,4 @@
-# UNFIFNISHED time-on-fire
+# time-on-fire
 A simple activity tracker written in Python for Windows 10.
 
 ### Why? There are time trackers already.
@@ -25,7 +25,7 @@ You can clear the database with `tof clear_db`.
 Use the `report` command to create reports of your activities.
 #### Arguments:
 ### `date_range`
-A date in `YYYY-MM-DD` format, or a range of dates in `YYYY-MM-DD|YYYY-MM-DD`  format.  Default is today.  
+A date in `YYYY-MM-DD` format, or a range of dates in `YYYY-MM-DD:YYYY-MM-DD`  format.  Default is today.  
 
 #### Options:
 ### `--mode`, `-m`
@@ -44,7 +44,7 @@ tof report
 returns a table summarizing your today activity;
 <br/>
 ```
-tof report 2022-05-05|2022-05-18 -m avg
+tof report 2022-05-05:2022-05-18 -m avg
 ```
 returns a table, containing the average screen time of each process per day, from
 5th to 18th of May;
@@ -69,7 +69,7 @@ There will be a `time_on_fire` folder (inside of `time-on-fire`), inside of whic
 It looks like this (without comments):
 ``` python
 POLLING_DELAY = 0.2
-IGNORE_PROCESSES = ["ShellExperienceHost.exe", "mbamtray.exe", "ueli.exe", "explorer.exe"]
+IGNORE_PROCESSES = ["ShellExperienceHost.exe", "StartMenuExperienceHost.exe", "mbamtray.exe", "SearchApp.exe", "ueli.exe", "explorer.exe", "dwm.exe"]
 ```
 `POLLING_DELAY` is how fast the script polls for the current foreground process.
 `IGNORE PROCESSES` is a list of processes that the script will ignore. 
