@@ -72,7 +72,7 @@ POLLING_DELAY = 0.2
 IGNORE_PROCESSES = ["ShellExperienceHost.exe", "StartMenuExperienceHost.exe", "mbamtray.exe", "SearchApp.exe", "ueli.exe", "explorer.exe", "dwm.exe"]
 ```
 `POLLING_DELAY` is how fast the script polls for the current foreground process.
-`IGNORE PROCESSES` is a list of processes that the script will ignore. 
+`IGNORE_PROCESSES` is a list of processes that the script will ignore. 
 
 ### Notes
 - If, for example, you switch from Chrome to desktop, it will still count as Chrome\'s screen time, because `explorer.exe` does not only pop up at desktop, but also when clicking the taskbar or just idling. I have no reliable way of knowing whether the user switched to desktop or it\'s popping by itself (it could last from 3 seconds to 15 minutes during testing). Let me know if you have a fix.
