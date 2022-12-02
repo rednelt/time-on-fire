@@ -1,5 +1,5 @@
 # =======================================================
-# Helper functions for retrieving data from the database
+# Retrieve date from the database and return a table
 # =======================================================
 
 import sqlite3
