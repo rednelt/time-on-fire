@@ -1,8 +1,8 @@
 # time-on-fire
-A simple activity tracker written in Python for Windows 10.
+A simple screen time tracker written in Python for Windows 10.
 
-### Why? There are time trackers already.
-I didn\'t find a **simple** time tracker for Windows. A lot of them are for teams/are paid/have a lot of features that I didn\'t need (like tracking time spent on projects, graphs, analytics, goals, grouping activities and so forth). Most of the time I just needed to check what I was doing today, or to see the average screen time of my apps this week. For these simple tasks, `time-on-fire` is much better suited, allowing me to do them in a single keystroke: `tof report` and `tof report 2022-07-10:2022-07-16 -m avg` respectively. It\'s deliberately crude and simple, containing only 3 commands (only one of which takes an argument and an option). If you want a GUI and more advanced features, check out [ActivityWatch](https://activitywatch.net/ "ActivityWatch"). It\'s crossplatform, free and open source.
+### Why? There are trackers for Windows already.
+I didn\'t find a **simple** screen time tracker for Windows. A lot of them are for teams/are paid/have a lot of features that I didn\'t need (like tracking time spent on projects, graphs, analytics, goals, grouping activities and so forth). Most of the time I just needed to check what I was doing today, or to see the average screen time of my apps this week. For these simple tasks, `time-on-fire` is much better suited, allowing me to do them in a single keystroke: `tof report` and `tof report 2022-07-10:2022-07-16 -m avg` respectively. It\'s deliberately crude and simple, containing only 3 commands (only one of which takes an argument and an option). If you want a GUI and more advanced features, check out [ActivityWatch](https://activitywatch.net/ "ActivityWatch"). It\'s crossplatform, free and open source.
 
 
 ## Quickstart
@@ -14,7 +14,7 @@ pip install time-on-fire
 in your terminal, and wait till pip finishes the installation. (or `py -m pip install tof` if didn\'t work)
 
 ### Tracking 🔎
-To start tracking your activities, execute `tof track`. Your activities (apps, foreground processes) are now being saved into a database.
+To start tracking your screen time, execute `tof track`. Your activities (apps, foreground processes to be precise) are now being saved into a database.
 
 Hit Ctrl+C when you\'re done. Just don\'t forget to stop recording before you turn off your computer, as the last activity won\'t be saved!
 
