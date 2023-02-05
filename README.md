@@ -1,5 +1,6 @@
 # time-on-fire
-![time-on-fire logo](https://imgur.com/a/gaF5DK1)
+[![image](https://www.linkpicture.com/q/tofbanner.png)](https://www.linkpicture.com/view.php?img=LPic63df71b6cd479133455121)
+
 A simple screen time tracker written in Python for Windows 10.
 
 ### Why? There are trackers for Windows already.
