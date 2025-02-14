@@ -1,6 +1,6 @@
 # =======================================================
 # Provides the track() function, that tracks time spent
-# on apps and saves it to activities.db
+# on apps and saves it to activities.db (SQLITE)
 # =======================================================
 import tabulate
 import win32gui

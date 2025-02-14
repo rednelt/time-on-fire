@@ -1,5 +1,5 @@
 # =======================================================
-# CLI interface for the app
+# CLI interface for the app!
 # =======================================================
 from datetime import date
 import click

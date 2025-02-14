@@ -9,7 +9,7 @@ import datetime
 
 
 # Returns a ready to print table, based on provided
-# date range and mode
+# date range and mode as arguments
 def report(date_range, mode):
     conn = sqlite3.connect("activities.db")
     cursor = conn.cursor()
